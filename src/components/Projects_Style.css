@@ -1,0 +1,147 @@
+.project {
+  position: relative;
+  padding: 80px 0;
+  background-color: #0f172a;
+  color: #fff;
+  overflow: hidden;
+}
+
+.project h2 {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project p {
+  color: #cbd5f5;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  max-width: 700px;
+}
+
+.project .nav-pills {
+  justify-content: center;
+  gap: 10px;
+}
+
+.project .nav-pills .nav-link {
+  background-color: transparent;
+  border: 1px solid #4f46e5;
+  color: #cbd5f5;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+.project .nav-pills .nav-link:hover {
+  background-color: #4f46e5;
+  color: #fff;
+}
+
+.project .nav-pills .nav-link.active {
+  background-color: #4f46e5;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.6);
+}
+
+.project .tab-content {
+  margin-top: 30px;
+}
+
+.proj-imgbx {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proj-imgbx img {
+  width: 100%;
+  display: block;
+  border-radius: 15px;
+  transition: transform 0.5s ease;
+}
+
+.proj-imgbx:hover img {
+  transform: scale(1.1);
+}
+
+.proj-imgbx:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.proj-txtx {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 23, 42, 0.9),
+    rgba(79, 70, 229, 0.7)
+  );
+  opacity: 0;
+  transition: all 0.4s ease;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transform: translateY(20px);
+}
+
+.proj-imgbx:hover .proj-txtx {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.proj-txtx h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.proj-txtx span {
+  color: #cbd5f5;
+  font-size: 14px;
+}
+
+.background-image-right {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  width: 35%;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.animate__animated {
+  animation-duration: 1s;
+}
+
+@media (max-width: 768px) {
+  .project {
+    padding: 60px 20px;
+  }
+
+  .project h2 {
+    font-size: 28px;
+  }
+
+  .project p {
+    font-size: 14px;
+  }
+
+  .background-image-right {
+    display: none;
+  }
+}

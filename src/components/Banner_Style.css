@@ -1,0 +1,72 @@
+.ban {
+  min-height: 100vh;
+  padding: 140px 60px 60px;
+  color: white;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.text-section {
+  max-width: 600px;
+}
+
+.Badge {
+  background-color: gray;
+  padding: 12px 18px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.text-section h1 {
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+.text-section p {
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.image-section img {
+  width: 300px;
+  max-width: 100%;
+}
+
+.connect-btn-2 {
+  margin-top: 20px;
+  border: none;
+  padding: 10px 22px;
+  background: linear-gradient(45deg, #7b2ff7, #f107a3);
+  color: #fff;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.connect-btn-2:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-section img {
+    width: 200px;
+  }
+}
