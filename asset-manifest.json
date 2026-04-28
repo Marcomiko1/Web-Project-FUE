@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Web-Project-FUE/static/css/main.9e11f800.css",
+    "main.js": "/Web-Project-FUE/static/js/main.6ce4ea16.js",
+    "static/js/453.4913e4e1.chunk.js": "/Web-Project-FUE/static/js/453.4913e4e1.chunk.js",
+    "static/media/back.jpg": "/Web-Project-FUE/static/media/back.b7d26312a2840a0466cb.jpg",
+    "static/media/color-sharp2.png": "/Web-Project-FUE/static/media/color-sharp2.a8487a5d119e7acea571.png",
+    "static/media/project-img1.png": "/Web-Project-FUE/static/media/project-img1.026c8a04c79f6f9a70c9.png",
+    "static/media/project-img2.png": "/Web-Project-FUE/static/media/project-img2.56411b4fc785ba6be178.png",
+    "static/media/project-img3.png": "/Web-Project-FUE/static/media/project-img3.ff62a42181b3f8bcd479.png",
+    "static/media/contact-img.svg": "/Web-Project-FUE/static/media/contact-img.b8512254770b0b07b36fc1636610992c.svg",
+    "static/media/revicons.eot": "/Web-Project-FUE/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/fue.png": "/Web-Project-FUE/static/media/fue.a5f53efe399ebc8f68eb.png",
+    "static/media/revicons.ttf": "/Web-Project-FUE/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/astro.svg": "/Web-Project-FUE/static/media/astro.7728acffffd84080d8d5cebc474c2c6f.svg",
+    "static/media/revicons.woff": "/Web-Project-FUE/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/Web-Project-FUE/index.html",
+    "main.9e11f800.css.map": "/Web-Project-FUE/static/css/main.9e11f800.css.map",
+    "main.6ce4ea16.js.map": "/Web-Project-FUE/static/js/main.6ce4ea16.js.map",
+    "453.4913e4e1.chunk.js.map": "/Web-Project-FUE/static/js/453.4913e4e1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9e11f800.css",
+    "static/js/main.6ce4ea16.js"
+  ]
+}
