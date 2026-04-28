@@ -1,18 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/NavBar.js';
-import Container from 'react-bootstrap/esm/Container.js';
-import Banner from './components/Banner.js';
-import Skills from './components/Skills.js';
-import Projects from './components/Projects.js';
+import NavBar from "./components/NavBar";
+import Banner from "./components/Banner";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import { Contact } from "./components/Contact";
+import { Newsletter } from "./components/Newsletter";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="App">
-      <NavBar></NavBar>
-      <Banner></Banner>
-      <Skills></Skills>
-      <Projects></Projects>
+      <NavBar />
+      <Banner />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Newsletter />
+      <Footer />
     </div>
   );
 }

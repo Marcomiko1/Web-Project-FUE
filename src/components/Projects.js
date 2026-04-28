@@ -32,7 +32,7 @@ export const Projects = () => {
       <Container> 
         <Row> 
           <Col size={12}> 
-            <TrackVisibility> 
+            <TrackVisibility partialVisibility offset={100}> 
               {({ isVisible }) => 
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}> 
                 <h2>Projects</h2> 
