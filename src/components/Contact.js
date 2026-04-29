@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import contactImg from "../assets/contact-img.svg";
-import TrackVisibility from "react-on-screen";
-import "./Contact_Style.css";
+import emailjs from "@emailjs/browser";
+import './Contact_Style.css';
+import contactImg from '../assets/contact-img.svg';
 
 export const Contact = () => {
   const formInitialDetails = {
@@ -15,7 +14,8 @@ export const Contact = () => {
 
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState("Send");
-  const [status, setStatus] = useState({});
+  const [status, setStatus] = useState(null);
+
   const onFormUpdate = (category, value) => {
     setFormDetails({
       ...formDetails,
@@ -26,111 +26,96 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    setTimeout(() => {
+
+    try {
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE,
+        process.env.REACT_APP_EMAILJS_CONTACT_TEMPLATE,
+        {
+          firstName: formDetails.firstName,
+          lastName: formDetails.lastName,
+          email: formDetails.email,
+          phone: formDetails.phone,
+          message: formDetails.message,
+        },
+        process.env.REACT_APP_EMAILJS_PUBLIC
+      );
+
       setStatus({ success: true, message: "Message sent successfully!" });
-      setButtonText("Send");
       setFormDetails(formInitialDetails);
-    }, 1000);
+    } catch (error) {
+      console.error(error);
+      setStatus({ success: false, message: "Something went wrong." });
+    }
+
+    setButtonText("Send");
   };
 
   return (
     <section className="contact" id="connect">
-      <Container>
-        <Row className="align-items-center">
-          <Col md={6}>
-            <TrackVisibility partialVisibility offset={100}>
-              {({ isVisible }) => (
-                <img
-                  className={isVisible ? "animate__animated animate__zoomIn" : ""}
-                  src={contactImg}
-                  alt="Contact"
-                />
-              )}
-            </TrackVisibility>
-          </Col>
+      <div className="container">
+        <div className="row align-items-center">
 
-          <Col md={6}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h2>Get In Touch</h2>
+          <div className="col-md-6">
+            <img src={contactImg} alt="Contact" />
+          </div>
 
-                  <form onSubmit={handleSubmit}>
-                    <Row>
-                      <Col sm={6} className="px-1">
-                        <input
-                          type="text"
-                          placeholder="First Name"
-                          value={formDetails.firstName}
-                          onChange={(e) =>
-                            onFormUpdate("firstName", e.target.value)
-                          }
-                        />
-                      </Col>
+          <div className="col-md-6">
+            <h2>Get In Touch</h2>
 
-                      <Col sm={6} className="px-1">
-                        <input
-                          type="text"
-                          placeholder="Last Name"
-                          value={formDetails.lastName}
-                          onChange={(e) =>
-                            onFormUpdate("lastName", e.target.value)
-                          }
-                        />
-                      </Col>
+            <form onSubmit={handleSubmit}>
+              <div className="row">
 
-                      <Col sm={6} className="px-1">
-                        <input
-                          type="email"
-                          placeholder="Email Address"
-                          value={formDetails.email}
-                          onChange={(e) =>
-                            onFormUpdate("email", e.target.value)
-                          }
-                        />
-                      </Col>
-
-                      <Col sm={6} className="px-1">
-                        <input
-                          type="tel"
-                          placeholder="Phone No."
-                          value={formDetails.phone}
-                          onChange={(e) =>
-                            onFormUpdate("phone", e.target.value)
-                          }
-                        />
-                      </Col>
-
-                      <Col>
-                        <textarea
-                          rows="6"
-                          placeholder="Message"
-                          value={formDetails.message}
-                          onChange={(e) =>
-                            onFormUpdate("message", e.target.value)
-                          }
-                        ></textarea>
-
-                        <button type="submit">
-                          <span>{buttonText}</span>
-                        </button>
-                      </Col>
-
-                      {status.message && (
-                        <Col>
-                          <p className={status.success ? "success" : "danger"}>
-                            {status.message}
-                          </p>
-                        </Col>
-                      )}
-                    </Row>
-                  </form>
+                <div className="col-sm-6 px-1">
+                  <input type="text" placeholder="First Name"
+                    value={formDetails.firstName}
+                    onChange={(e) => onFormUpdate('firstName', e.target.value)} />
                 </div>
-              )}
-            </TrackVisibility>
-          </Col>
-        </Row>
-      </Container>
+
+                <div className="col-sm-6 px-1">
+                  <input type="text" placeholder="Last Name"
+                    value={formDetails.lastName}
+                    onChange={(e) => onFormUpdate('lastName', e.target.value)} />
+                </div>
+
+                <div className="col-sm-6 px-1">
+                  <input type="email" placeholder="Email Address"
+                    value={formDetails.email}
+                    onChange={(e) => onFormUpdate('email', e.target.value)} />
+                </div>
+
+                <div className="col-sm-6 px-1">
+                  <input type="tel" placeholder="Phone No."
+                    value={formDetails.phone}
+                    onChange={(e) => onFormUpdate('phone', e.target.value)} />
+                </div>
+
+                <div className="col-12 px-1">
+                  <textarea rows="6" placeholder="Message"
+                    value={formDetails.message}
+                    onChange={(e) => onFormUpdate('message', e.target.value)} />
+                </div>
+
+                <div className="col-12 px-1">
+                  <button type="submit">
+                    <span>{buttonText}</span>
+                  </button>
+                </div>
+
+                {status && (
+                  <div className="col-12">
+                    <p className={status.success ? "success" : "danger"}>
+                      {status.message}
+                    </p>
+                  </div>
+                )}
+
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
     </section>
   );
 };

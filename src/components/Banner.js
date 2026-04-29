@@ -3,6 +3,7 @@ import Container from "react-bootstrap/esm/Container";
 import './Banner_Style.css';
 import Badge from 'react-bootstrap/Badge';
 import astro from '../assets/astro.svg';
+import CV from '../assets/CV.docx';
 
 function Banner() {
   const roles = ["Web Developer", "UI/UX Designer"];
@@ -58,14 +59,16 @@ function Banner() {
             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
           </p>
 
+          <a href={CV}>
           <button className="connect-btn-2">
             <span className="btn-content">
-              <span>Let's Connect</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+              <span>Download CV</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
               </svg>
             </span>
           </button>
+          </a>
         </div>
 
         <div className="image-section">
